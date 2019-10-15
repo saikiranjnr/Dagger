@@ -1,12 +1,13 @@
 package com.example.dagger.car;
 
+
 import android.app.Application;
 
-import com.example.dagger.di.ActivityComponent;
-import com.example.dagger.di.DaggerActivityComponent;
+import com.example.dagger.di.AppComponent;
+import com.example.dagger.di.DaggerAppComponent;
 
 public class ExampleApp extends Application {
-private ActivityComponent carComponent;
+/*private ActivityComponent carComponent;
 
     @Override
     public void onCreate() {
@@ -18,5 +19,19 @@ private ActivityComponent carComponent;
 
     public ActivityComponent getCarComponent(){
         return carComponent;
+    }*/
+
+private AppComponent appComponent;
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+       /* appComponent=Dagg.create();*/
+         appComponent= DaggerAppComponent.create();
+    }
+
+    public AppComponent getAppComponent(){
+        return appComponent;
     }
 }
+

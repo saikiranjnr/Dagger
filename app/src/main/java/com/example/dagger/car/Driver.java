@@ -3,11 +3,8 @@ package com.example.dagger.car;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
-@Singleton
+
 public class Driver
 {
-    @Inject
-    public Driver() {
-
-    }
+// Consider it's a third party class, we can't edit
 }

@@ -33,9 +33,8 @@ public interface ActivityComponent {
 */
 
 @PerActivity
-@Component(modules = {WheelsModule.class,PetrolEngineModule.class})
+@Component(dependencies = AppComponent.class,modules = {WheelsModule.class,PetrolEngineModule.class})
 public interface ActivityComponent {
-
      Car getCar();
 
      void inject(MainActivity mainActivity);
@@ -47,6 +46,8 @@ public interface ActivityComponent {
 
           @BindsInstance
           Builder horsePower(@Named("horse power") int horsePower);
+
+          Builder appComponent(AppComponent appComponent);
 
           @BindsInstance
           Builder engineCapacity(@Named("engine capacity") int engineCapacity);
