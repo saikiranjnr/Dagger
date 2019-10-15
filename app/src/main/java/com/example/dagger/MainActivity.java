@@ -6,7 +6,8 @@ import android.os.Bundle;
 import com.example.dagger.car.Car;
 import com.example.dagger.car.ExampleApp;
 import com.example.dagger.di.ActivityComponent;
-import com.example.dagger.di.DaggerActivityComponent;
+/*import com.example.dagger.di.DaggerActivityComponent;*/
+import com.example.dagger.di.DieselEngineModule;
 
 import javax.inject.Inject;
 
@@ -31,7 +32,12 @@ public class MainActivity extends Activity {
 /*
         ActivityComponent carComponent= ((ExampleApp)getApplication()).getCarComponent();
 */
+/*
         ActivityComponent carComponent= DaggerActivityComponent.builder().engineCapacity(1500).horsePower(140).appComponent(((ExampleApp)getApplication()).getAppComponent()).build();
+*/
+
+
+        ActivityComponent carComponent= (((ExampleApp)getApplication()).getAppComponent()).activityComponent().create(1500,5000);
         carComponent.inject(this);
 
 
